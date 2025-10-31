@@ -88,7 +88,3 @@ python -m minidb.clients.gui
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
-## Limitations connues
-- Pas d’index secondaire, lecture en mémoire de la table au chargement
-- Parser SQL minimaliste: sous-ensemble défini ci-dessus
-- Concurrence basique (verrous par fichier)
