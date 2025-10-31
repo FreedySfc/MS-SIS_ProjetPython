@@ -87,4 +87,34 @@ python -m minidb.clients.gui
 ```bash
 python -m unittest discover -s tests -p "test_*.py"
 ```
+## Les manipulations qu'on peut faire
 
+
+Lancer le serveur :
+
+python -m minidb.server.tcp_server --host 127.0.0.1 --port 5555 --data-dir ./data
+
+Le client CLI
+
+python -m minidb.clients.cli --host 127.0.0.1 --port 5555 --user freedy
+Mot de passe: ****
+{"status": "ok", "message": "Authentifié"}
+Connecté. Tapez du SQL, ou 'exit' pour quitter.
+
+Créer une table
+CREATE TABLE users (firstname TEXT, age INT, salary FLOAT, disabled BOOL);
+
+Insérer dans une table
+INSERT INTO users (firstname, age, salary, disabled) VALUES ('Richard', 25, 20000, false);
+
+Lire dans une table
+SELECT firstname, age FROM users WHERE age < 30;
+
+Mettre à jour une table
+UPDATE users SET salary = 30000 WHERE firstname = 'Richard';
+
+Supprimer
+DELETE FROM users WHERE age > 40;
+
+Supprimer la table
+DROP TABLE users;
